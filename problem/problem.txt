@@ -1,0 +1,20 @@
+#################################################################################################
+prblem :
+    we have backend and front , i conect back to front with haproxy , when user upload video 
+     connection betwen back and frond lost
+how i solved : 
+    i use these parametrs (in haproxy config) for keep connection :
+        defaults
+            log     global
+            mode    http
+            option  httplog
+            option  dontlognull
+            timeout http-request 10m
+            timeout http-keep-alive 5m
+            timeout queue 2m
+            timeout tunnel 5m
+            timeout connect 5m
+            timeout client  20m
+            timeout server  30m
+
+##################################################################################################

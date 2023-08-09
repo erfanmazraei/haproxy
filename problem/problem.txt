@@ -18,3 +18,13 @@ how i solved :
             timeout server  30m
 
 ##################################################################################################
+
+problem :
+    we use frontend and backend , when we increase replica , sessions were facing problem , i think session time was not enough
+
+how i solved:
+
+    i set this parameter at backend in haproxy config:
+        cookie SERVER insert indirect nocache
+
+####################################################################################################

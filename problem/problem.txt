@@ -28,3 +28,13 @@ how i solved:
         cookie SERVER insert indirect nocache
 
 ####################################################################################################
+
+problem :
+    i cant see user ip in backend (behinde haproxy) :
+
+how i solved:
+    i set this parameter in front in haproxy config:
+        option forwardfor header X-Real-IP
+        http-request set-header X-Real-IP %[src]
+        
+#######################################################################################################
